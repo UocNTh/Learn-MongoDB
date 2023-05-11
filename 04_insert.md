@@ -7,7 +7,7 @@
     { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
     )
 
-```db.COLLECTION_NAME.insertMANY()```
+```db.COLLECTION_NAME.insertMany()```
 
     db.inventory.insertMany([
     { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
