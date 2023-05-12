@@ -75,7 +75,7 @@
     ]
 
 
-**Tìm kiếm với toán tử **
+**Tìm kiếm với toán tử**
 
 ```{ <field1>: { <operator1>: <value1> }, ... }```
 
