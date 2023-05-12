@@ -6,7 +6,7 @@
 
 **Liệt kê danh sách**
 
-    db.user.find()
+    > db.user.find()
 
     [
     {
@@ -43,7 +43,7 @@
 
 ```{ <field1>:<value1>, ... }```
 
-    db.user.find({gender:"Nu"})
+    > db.user.find({gender:"Nu"})
 
     [
     {
@@ -62,7 +62,7 @@
     }
     ]
 
-    db.user.find({dob: ISODate("2002-11-24T00:00:00.000Z")})
+    > db.user.find({dob: ISODate("2002-11-24T00:00:00.000Z")})
 
     [
     {
@@ -79,7 +79,7 @@
 
 ```{ <field1>: { <operator1>: <value1> }, ... }```
 
-    db.user.find({address: {$in : ["Hai Duong","Thai Binh"]}})
+    > db.user.find({address: {$in : ["Hai Duong","Thai Binh"]}})
 
     [
     {
@@ -114,7 +114,7 @@
 
 **Toán tử OR** 
 
-    db.user.find({$or:[{address:"Nam Dinh"}, {gender:"Nam"}]}) 
+    > db.user.find({$or:[{address:"Nam Dinh"}, {gender:"Nam"}]}) 
 
     [
     {
@@ -135,7 +135,7 @@
 
 **Toán tử AND**
 
-    db.user.find({gender:"Nu", address:"Thai Binh"})
+    > db.user.find({gender:"Nu", address:"Thai Binh"})
 
     [
     {
@@ -150,7 +150,7 @@
 **Kết hợp toán tử OR và AND**
 
 
-    db.user.find({gender:"Nu", $or : [{username:"Nguyen Thi Uoc"},{address:"Hung Yen"}]})
+    > db.user.find({gender:"Nu", $or : [{username:"Nguyen Thi Uoc"},{address:"Hung Yen"}]})
 
     [
     {
