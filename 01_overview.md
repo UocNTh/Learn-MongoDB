@@ -23,7 +23,7 @@
 
 - ```Không ràng buộc (Non-relational)```: Không có khái niệm khóa chính, khóa ngoại
 
-- ```Khả năng mở rộng (High Scalability)```: Đối với NoSQL, không có giới hạn cho dữ liệu. Do sử dụng hệ thống phân tán, khi hệ thống lớn lên có thể mở sung server để chia dữ liệu, chia tải để hệ thống hoạt động tốt hơn. VD Facebook, Google
+- ```Khả năng mở rộng (High Scalability)```: Đối với NoSQL, không có giới hạn cho dữ liệu. Do sử dụng hệ thống phân tán, khi hệ thống lớn lên có thể b sung server để chia dữ liệu, chia tải để hệ thống hoạt động tốt hơn. VD Facebook, Google
 
 - ```Khả năng mở rộng chiều dọc```: nâng cấp CPU, nâng cấp RAM, nâng cấp ổ cứng để hiệu suất hoạt động nhanh hơn
 - ```Khả năng mở rộng chiều ngang```: Gắn thêm server để tăng hiệu suất. Hệ thống cơ sở phân tán sẽ mở rộng theo chiều ngang
