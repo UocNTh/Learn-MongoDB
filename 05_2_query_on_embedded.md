@@ -90,7 +90,7 @@
 
 
     demo> db.demo5.find({$or:[{qty:{$lte:45}},{"size.h":{$gte:10}}]})
-    
+
     [
     {
         _id: ObjectId("6462f37640711d7f6fdd0901"),
@@ -111,6 +111,31 @@
         item: 'postcard',
         qty: 45,
         size: { h: 10, w: 15.25, uom: 'cm' },
+        status: 'A'
+    }
+    ]
+
+ 
+
+    db.demo5.find({$or:[{qty:{$lte:45}},{"size.h":{$gte:10}}]},{size:0})
+
+    [
+    {
+        _id: ObjectId("6462f37640711d7f6fdd0901"),
+        item: 'journal',
+        qty: 25,
+        status: 'A'
+    },
+    {
+        _id: ObjectId("6462f37640711d7f6fdd0904"),
+        item: 'planner',
+        qty: 75,
+        status: 'D'
+    },
+    {
+        _id: ObjectId("6462f37640711d7f6fdd0905"),
+        item: 'postcard',
+        qty: 45,
         status: 'A'
     }
     ]
