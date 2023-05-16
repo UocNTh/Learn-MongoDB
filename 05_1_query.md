@@ -6,6 +6,7 @@
 
 **Liệt kê danh sách**
 
+
     > db.user.find()
 
     [
