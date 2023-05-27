@@ -1,4 +1,48 @@
 
+## Query Documents
+
+
+**1. Select All Documents in a Collection** 
+
+    db.collection.find() 
+
+**2. Specify Equality Condition**
+
+    { <field1>: <value1>, ... }
+
+Ex: 
+
+    db.inventory.find({item : "notebook"})
+
+**3. Specify Conditions Using Query Operators** 
+
+    { <field1>: { <operator1>: <value1> }, ... }
+
+
+**Comparison**
+
+|Name | Description | Ex |
+|:---:|:---:|:--:|
+|$eq | Matches values that are **equal** to a specified value|db.inventory.find({"size.h" : { $eq : 10 } } )|
+|$gt|Matches values that are **greater than** a specified value|db.inventory.find({"size.h" : { $gt : 10 } } )|
+|$gte| Matches values that are **greater than or equal** to a specified value |db.inventory.find({"size.h" : { $gte : 10 } } )|
+|$in| Matches any of the values specified in an **array**|db.inventory.find( { "size.h" : { $in : [ 10, 14] } } )|
+|$lt| Matches values that are **less than** a specified value|db.inventory.find({"size.h" : { $lt : 10 } } )|
+|$lte| Matches values that are **less than or equal** to a specified value |db.inventory.find({"size.h" : { $lte : 10 } } )| 
+|$ne|Matches all values that are **not equal** to a specified value |db.inventory.find({"size.h" : { $ne : 14 } } ) |
+|$nin | Matches none of the values specified in an **array**| db.inventory.find({"size.h" : { $nin : [14, 10 ]} } ) |
+
+**4. Specify AND Conditions**
+
+**5. Specify OR Conditions**
+
+**6. Specify AND as well as OR Conditions**
+
+
+
+----
+
+
     [{username:"Nguyen Thi Uoc",gender:"Nu",dob: new Date("2002-12-25"), address:"Hai Duong"},
     {username:"Cao Quang Thuc", gender:"Nam", dob: new Date("2002-01-30"), address:"Hai Duong"},
     {username:"Trinh Quyen Diep", gender:"Nam", dob: new Date("2002-02-20"), address:"Hai Duong"},
@@ -6,8 +50,7 @@
 
 **Liệt kê danh sách**
 
-
-    > db.user.find()
+    db.user.find()
 
     [
     {
@@ -44,7 +87,7 @@
 
 ```{ <field1>:<value1>, ... }```
 
-    > db.user.find({gender:"Nu"})
+    db.user.find({gender:"Nu"})
 
     [
     {
@@ -63,7 +106,7 @@
     }
     ]
 
-    > db.user.find({dob: ISODate("2002-11-24T00:00:00.000Z")})
+    db.user.find({dob: ISODate("2002-11-24T00:00:00.000Z")})
 
     [
     {
@@ -76,11 +119,11 @@
     ]
 
 
-**Tìm kiếm với toán tử**
+**Tìm kiếm với toán tử **
 
 ```{ <field1>: { <operator1>: <value1> }, ... }```
 
-    > db.user.find({address: {$in : ["Hai Duong","Thai Binh"]}})
+    db.user.find({address: {$in : ["Hai Duong","Thai Binh"]}})
 
     [
     {
@@ -115,7 +158,7 @@
 
 **Toán tử OR** 
 
-    > db.user.find({$or:[{address:"Nam Dinh"}, {gender:"Nam"}]}) 
+    db.user.find({$or:[{address:"Nam Dinh"}, {gender:"Nam"}]}) 
 
     [
     {
@@ -136,7 +179,7 @@
 
 **Toán tử AND**
 
-    > db.user.find({gender:"Nu", address:"Thai Binh"})
+    db.user.find({gender:"Nu", address:"Thai Binh"})
 
     [
     {
@@ -151,7 +194,7 @@
 **Kết hợp toán tử OR và AND**
 
 
-    > db.user.find({gender:"Nu", $or : [{username:"Nguyen Thi Uoc"},{address:"Hung Yen"}]})
+    db.user.find({gender:"Nu", $or : [{username:"Nguyen Thi Uoc"},{address:"Hung Yen"}]})
 
     [
     {
@@ -169,3 +212,5 @@
         address: 'Hung Yen'
     }
     ]
+
+---
