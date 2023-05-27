@@ -1,4 +1,7 @@
 
+
+## Query on Embedded Documents
+
     [
         { "item": "journal", "qty": 25, "size": { "h": 14, "w": 21, "uom": "cm" }, "status": "A" },
         { "item": "notebook", "qty": 50, "size": { "h": 8.5, "w": 11, "uom": "in" }, "status": "A" },
@@ -8,7 +11,15 @@
     ]
 
 
-**Match an Embedded**
+
+**1. Match an Embedded**
+
+
+Equality matches on the whole embedded document require an **exact** match of the specified <value> document, **including the field order**. 
+
+
+    { <field>: <value> }
+
 
 
     demo> db.demo5.find({size: { h: 10, w: 15.25, uom: 'cm' }}) 
@@ -23,7 +34,12 @@
     }
     ]
 
-**Query on Nested Field**
+**2. Query on Nested Field**
+
+
+To specify a query condition on fields in an embedded/nested document, use **dot notation** ("field.nestedField").
+
+**Specify Equality Match on a Nested Field**
 
     demo> db.demo5.find({"size.h":10})
 
@@ -37,6 +53,7 @@
     }
     ]
 
+**Specify Match using Query Operator**
 
   ```  { <`field1`>: { <`operator1`>: <`value1`> }, ... }```
 
@@ -69,6 +86,9 @@
     ]
 
 
+**Specify AND Condition**
+
+
     demo> db.demo5.find({qty:{$lte:45},"size.h":{$gte:10}})
 
     [
@@ -87,6 +107,10 @@
         status: 'A'
     }
     ]
+
+
+**Specify OR Condition**
+
 
 
     demo> db.demo5.find({$or:[{qty:{$lte:45}},{"size.h":{$gte:10}}]})
@@ -116,26 +140,3 @@
     ]
 
  
-
-    db.demo5.find({$or:[{qty:{$lte:45}},{"size.h":{$gte:10}}]},{size:0})
-
-    [
-    {
-        _id: ObjectId("6462f37640711d7f6fdd0901"),
-        item: 'journal',
-        qty: 25,
-        status: 'A'
-    },
-    {
-        _id: ObjectId("6462f37640711d7f6fdd0904"),
-        item: 'planner',
-        qty: 75,
-        status: 'D'
-    },
-    {
-        _id: ObjectId("6462f37640711d7f6fdd0905"),
-        item: 'postcard',
-        qty: 45,
-        status: 'A'
-    }
-    ]
