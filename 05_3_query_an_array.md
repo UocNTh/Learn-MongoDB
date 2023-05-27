@@ -1,7 +1,7 @@
   
-  
+## Query an Array 
 
-    db.inventory.insertMany([
+    db.inventory4.insertMany([
     { item: "journal", qty: 25, tags: ["blank", "red"], dim_cm: [ 14, 21 ] },
     { item: "notebook", qty: 50, tags: ["red", "blank"], dim_cm: [ 14, 21 ] },
     { item: "paper", qty: 100, tags: ["red", "blank", "plain"], dim_cm: [ 14, 21 ] },
@@ -13,7 +13,7 @@
 
 ```{ <field>: <value> }```
 
-bao gồm cả thứ tự của các phần tử
+Bao gồm cả thứ tự của các phần tử
 
 
 
@@ -66,8 +66,10 @@ bao gồm cả thứ tự của các phần tử
 **Query an Array for an Element**
 
 
-    db.inventory.find( { tags: "red" } )
+    { <field>: <value> }
 
+
+    db.inventory.find( { tags: "red" } )
 
     [
     {
@@ -117,7 +119,7 @@ bao gồm cả thứ tự của các phần tử
 ```$elemMatch```: chứa ít nhất một phần tử thỏa mãn tất cả điều kiện
 
 
-    db.inventory.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
+    db.inventory4.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
 
 **Query for an Element by the Array Index Position**
 
@@ -145,6 +147,7 @@ bao gồm cả thứ tự của các phần tử
 
 
     demo> db.inventory.find({"tags.0":{$in :["blue","red"]}})
+    
     [
     {
         _id: ObjectId("6463000391201e66f6e3dcfc"),
@@ -181,5 +184,8 @@ bao gồm cả thứ tự của các phần tử
 
 
     db.inventory.find( { "tags": { $size: 3 } } )
+
+
+
 
 
