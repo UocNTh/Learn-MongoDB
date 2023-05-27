@@ -65,8 +65,7 @@ Bao gồm cả thứ tự của các phần tử
 
 **Query an Array for an Element**
 
-
-    { <field>: <value> }
+```{ <field>: <value> }```
 
 
     db.inventory.find( { tags: "red" } )
