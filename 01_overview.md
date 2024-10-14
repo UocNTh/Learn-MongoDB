@@ -38,7 +38,7 @@
 
 |Tính năng|SQL|NoSQL|
 |:---:|:---:|:---:|
-|Hiệt suất| Kém hơn NoSQL vì khi truy vấn phải có tính toán, kiểm tra và xử lý các mối quan hệ các bảng| Tốt hơn SQL vì nó bỏ qua các ràng buộc|
+|Hiệu suất| Kém hơn NoSQL vì khi truy vấn phải có tính toán, kiểm tra và xử lý các mối quan hệ các bảng| Tốt hơn SQL vì nó bỏ qua các ràng buộc|
 |Mở rộng theo chiều ngang|Có thể thực hiện được nhưng phức tạp| Mở rộng dễ dàng|
 |Tốc độ Read/Write|Kém hơn NoSQL do phải đảm bảo tính ràng buộc dữ liệu giữa các bảng|Tốc độ nhanh hơn SQL vì bỏ qua cơ chế ràng buộc giữa các bảng. Vì dữ liệu được lưu trong RAM sau đó mới đẩy xuống HĐ và tính nhất quán cuối|
 |Phần cứng|Đòi hỏi phần cứng cao| Không đòi hỏi quá cao về phần cứng|
